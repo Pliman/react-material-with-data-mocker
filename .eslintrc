@@ -23,6 +23,7 @@
     "no-unused-expressions": 0,
     "no-unused-vars": [1, { "vars": "all", "args": "none" }],
     "no-var": 1,
+    "block-scoped-var": 2,
     "no-undef": 1,
     "no-caller": 1,
     "quotes": [1, "single", "avoid-escape"],
