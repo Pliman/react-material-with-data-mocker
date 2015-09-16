@@ -6,7 +6,7 @@ const Route = Router.Route;
 const DefaultRoute = Router.DefaultRoute;
 const RouteHandler = Router.RouteHandler;
 
-const SiteFooter = require('./components/SiteFooter');
+const SiteFooter = require('./common/Footer');
 
 const RaisedButton = require('material-ui/lib/raised-button');
 
