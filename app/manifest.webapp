@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "name": "react material with data mocker",
+  "launch_path": "/index.html",
+  "description": "react material with data mocker.",
+  "icons": {
+    "128": "/i/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "",
+    "url": ""
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "zh_CN",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "react material with data mocker",
+      "description": "react material with data mocker.",
+    },
+    "zh_CN": {
+      "name": "react material with data mocker",
+      "description": "react material with data mocker"
+    }
+  }
+}
