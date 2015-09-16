@@ -9,12 +9,21 @@ const RouteHandler = Router.RouteHandler;
 const SiteFooter = require('./common/Footer');
 
 const RaisedButton = require('material-ui/lib/raised-button');
+let ThemeManager = new (require('material-ui/lib/styles/theme-manager'))();
 
 const App = React.createClass({
+  childContextTypes: {
+    muiTheme: React.PropTypes.object,
+  },
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme(),
+    };
+  },
   render: function() {
     return (
       <div className="ask-page">
-        <RaisedButton label="Default" />
+        <RaisedButton label="Super Secret Password" primary={true}/>
 
         <main className="ask-main">
           <RouteHandler />
