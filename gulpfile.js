@@ -46,6 +46,7 @@ gulp.task('jshint', function () {
 
 // 图片优化
 gulp.task('images', function () {
+	$.cache.clearAll();
 	return gulp.src('app/i/**/*')
 		.pipe($.cache($.imagemin({
 			progressive: true,
