@@ -6,7 +6,7 @@ const Route = Router.Route;
 const DefaultRoute = Router.DefaultRoute;
 const RouteHandler = Router.RouteHandler;
 
-const SiteFooter = require('./common/Footer');
+const Footer = require('./common/Footer');
 
 const RaisedButton = require('material-ui/lib/raised-button');
 let ThemeManager = new (require('material-ui/lib/styles/theme-manager'))();
@@ -36,7 +36,7 @@ const App = React.createClass({
 				<main className="main">
 					<RouteHandler />
 				</main>
-				<SiteFooter />
+				<Footer/>
 			</div>
 		);
 	}

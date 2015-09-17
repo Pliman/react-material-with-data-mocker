@@ -3,8 +3,7 @@
 const React = require('react');
 const year = new Date().getFullYear();
 
-const SiteFooter = React.createClass({
-
+const Footer = React.createClass({
 	render: function () {
 		return (
 			<footer className="footer">
@@ -16,4 +15,4 @@ const SiteFooter = React.createClass({
 	}
 });
 
-module.exports = SiteFooter;
+module.exports = Footer;
