@@ -7,7 +7,7 @@ const SiteFooter = React.createClass({
 
 	render: function () {
 		return (
-			<footer className="ask-footer">
+			<footer className="footer">
 				<div>
 					<p>© {year} Pliman. Licensed under MIT license.</p>
 				</div>

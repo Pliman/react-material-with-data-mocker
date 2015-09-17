@@ -22,6 +22,8 @@
     "react-tap-event-plugin": "^0.1.7"
   },
   "devDependencies": {
+    "material-design-lite": "^1.0.4",
+    "bootstrap": "^3.3.5",
     "material-ui": "^0.11.1",
     "babelify": "^6.1.2",
     "browser-sync": "^2.6.4",

@@ -12,26 +12,34 @@ const RaisedButton = require('material-ui/lib/raised-button');
 let ThemeManager = new (require('material-ui/lib/styles/theme-manager'))();
 
 const App = React.createClass({
-  childContextTypes: {
-    muiTheme: React.PropTypes.object,
-  },
-  getChildContext() {
-    return {
-      muiTheme: ThemeManager.getCurrentTheme(),
-    };
-  },
-  render: function() {
-    return (
-      <div className="ask-page">
-        <RaisedButton label="Super Secret Password" primary={true}/>
+	childContextTypes: {
+		muiTheme: React.PropTypes.object
+	},
+	getChildContext: function () {
+		return {
+			muiTheme: ThemeManager.getCurrentTheme()
+		};
+	},
+	render: function () {
+		return (
+			<div className="page">
+				<div className="row">
+					<div className="col-md-4" style={{backgroundColor:'blue'}}>.col-md-4</div>
+					<div className="col-md-8">.col-md-8</div>
+				</div>
+				<div className="row">
+					<div className="col-md-3" style={{backgroundColor:'blue'}}>.col-md-3</div>
+					<div className="col-md-9">.col-md-9</div>
+				</div>
+				<RaisedButton label="Super Secret Password" primary={true}/>
 
-        <main className="ask-main">
-          <RouteHandler />
-        </main>
-        <SiteFooter />
-      </div>
-    );
-  }
+				<main className="main">
+					<RouteHandler />
+				</main>
+				<SiteFooter />
+			</div>
+		);
+	}
 });
 
 // Pages
@@ -40,16 +48,16 @@ const Page1 = require('./pages/Page1');
 const Page2 = require('./pages/Page2');
 
 const routes = (
-  <Route name="app" path="/" handler={App}>
-    <DefaultRoute name="index" handler={Index}/>
-    <Route name='page1' handler={Page1}/>
-    <Route name='page2' handler={Page2}/>
-  </Route>
+	<Route name="app" path="/" handler={App}>
+		<DefaultRoute name="index" handler={Index}/>
+		<Route name='page1' handler={Page1}/>
+		<Route name='page2' handler={Page2}/>
+	</Route>
 );
 
-document.addEventListener('DOMContentLoaded', function() {
-  Router.run(routes,
-    function(Handler) {
-      React.render(<Handler />, document.body);
-    });
+document.addEventListener('DOMContentLoaded', function () {
+	Router.run(routes,
+		function (Handler) {
+			React.render(<Handler />, document.body);
+		});
 });
