@@ -43,9 +43,9 @@ const App = React.createClass({
 });
 
 // Pages
-const Index = require('./pages/Index');
-const Page1 = require('./pages/Page1');
-const Page2 = require('./pages/Page2');
+const Index = require('./pages/index');
+const Page1 = require('./pages/page1');
+const Page2 = require('./pages/page2');
 
 const routes = (
 	<Route name="app" path="/" handler={App}>
