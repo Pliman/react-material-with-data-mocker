@@ -34,8 +34,8 @@ const routes = (
 	<Route name="app" path="/" handler={App}>
 		<DefaultRoute name="login" handler={Login}/>
 		<Route name="index" handler={Index}>
-			<Route name='page1' handler={Page1}/>
-			<Route name='page2' handler={Page2}/>
+			<Route name='page1' path='/page1' handler={Page1}/>
+			<Route name='page2' path='/page2' handler={Page2}/>
 		</Route>
 	</Route>
 );

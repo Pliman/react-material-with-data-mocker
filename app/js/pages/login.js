@@ -1,12 +1,15 @@
 'use strict';
 
 const React = require('react');
+const Router = require('react-router');
 
 const Index = React.createClass({
-	mixins: [],
+	mixins: [Router.Navigation],
 	doLogin: function () {
+		var _this = this;
 		setTimeout(function () {
-			console.log(123);
+			_this.transitionTo('index');
+			localStorage.setItem('user', '1');
 		}, 300);
 	},
 	render: function () {
