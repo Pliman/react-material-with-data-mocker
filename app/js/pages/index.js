@@ -9,11 +9,15 @@ const Footer = require('../common/footer');
 
 var Index = React.createClass({
 	mixins: [Router.Navigation],
+	contextTypes: {
+		user: React.PropTypes.object,
+		setUser: React.PropTypes.func
+	},
 	getInitialState: function () {
 		console.log('parent init state');
 
-		var user = localStorage.getItem('user');
-		if (user === '1') {
+		//var user = localStorage.getItem('user');
+		if (this.context.user.user.name === '1') {
 			this.transitionTo('page1');
 			return null;
 		}

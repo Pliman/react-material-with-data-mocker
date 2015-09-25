@@ -5,11 +5,16 @@ const Router = require('react-router');
 
 const Index = React.createClass({
 	mixins: [Router.Navigation],
+	contextTypes: {
+		user: React.PropTypes.object,
+		setUser: React.PropTypes.func
+	},
 	doLogin: function () {
 		var _this = this;
 		setTimeout(function () {
+			_this.context.user.update({name: '1'});
 			_this.transitionTo('index');
-			localStorage.setItem('user', '1');
+			//localStorage.setItem('user', '1');
 		}, 300);
 	},
 	render: function () {
@@ -17,7 +22,7 @@ const Index = React.createClass({
 			<div className="page">
 				<div className="row">
 					<div className="col-md-12">
-						<label>用户名</label>
+						<label>用户名{this.context.user.user.name}</label>
 						<input type="text"/>
 						<button onClick={this.doLogin}>登陆</button>
 					</div>

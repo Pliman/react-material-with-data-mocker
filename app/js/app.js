@@ -10,11 +10,26 @@ let ThemeManager = new (require('material-ui/lib/styles/theme-manager'))();
 
 const App = React.createClass({
 	childContextTypes: {
-		muiTheme: React.PropTypes.object
+		muiTheme: React.PropTypes.object,
+		user: React.PropTypes.object,
+		setUser: React.PropTypes.func
 	},
 	getChildContext: function () {
+		var _this = this;
+
 		return {
-			muiTheme: ThemeManager.getCurrentTheme()
+			muiTheme: ThemeManager.getCurrentTheme(),
+			user: {
+				user: {
+					name: 2
+				},
+				update: function (user) {
+					_this.context.user.user = user;
+				}
+			},
+			setUser: function (user) {
+				this.context.user = user;
+			}
 		};
 	},
 	render: function () {
