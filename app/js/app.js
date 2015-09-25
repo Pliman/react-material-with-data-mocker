@@ -6,9 +6,6 @@ const Route = Router.Route;
 const DefaultRoute = Router.DefaultRoute;
 const RouteHandler = Router.RouteHandler;
 
-const Footer = require('./common/Footer');
-
-const RaisedButton = require('material-ui/lib/raised-button');
 let ThemeManager = new (require('material-ui/lib/styles/theme-manager'))();
 
 const App = React.createClass({
@@ -22,36 +19,24 @@ const App = React.createClass({
 	},
 	render: function () {
 		return (
-			<div className="page">
-				<div className="row">
-					<div className="col-md-4" style={{backgroundColor:'blue'}}>.col-md-4</div>
-					<div className="col-md-8">.col-md-8</div>
-				</div>
-				<div className="row">
-					<div className="col-md-3" style={{backgroundColor:'blue'}}>.col-md-3</div>
-					<div className="col-md-9">.col-md-9</div>
-				</div>
-				<RaisedButton label="Super Secret Password" primary={true}/>
-
-				<main className="main">
-					<RouteHandler />
-				</main>
-				<Footer/>
-			</div>
+			<RouteHandler />
 		);
 	}
 });
 
 // Pages
+const Login = require('./pages/login');
 const Index = require('./pages/index');
 const Page1 = require('./pages/page1');
 const Page2 = require('./pages/page2');
 
 const routes = (
 	<Route name="app" path="/" handler={App}>
-		<DefaultRoute name="index" handler={Index}/>
-		<Route name='page1' handler={Page1}/>
-		<Route name='page2' handler={Page2}/>
+		<DefaultRoute name="login" handler={Login}/>
+		<Route name="index" handler={Index}>
+			<Route name='page1' handler={Page1}/>
+			<Route name='page2' handler={Page2}/>
+		</Route>
 	</Route>
 );
 
