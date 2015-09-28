@@ -14,10 +14,8 @@ var Index = React.createClass({
 		setUser: React.PropTypes.func
 	},
 	getInitialState: function () {
-		console.log('parent init state');
-
 		//var user = localStorage.getItem('user');
-		if (this.context.user.user.name === '1') {
+		if (this.context.user.name === '1') {
 			this.transitionTo('page1');
 			return null;
 		}

@@ -9,6 +9,11 @@ const RouteHandler = Router.RouteHandler;
 let ThemeManager = new (require('material-ui/lib/styles/theme-manager'))();
 
 const App = React.createClass({
+	getInitialState: function () {
+		return {
+			user: {name: ''}
+		};
+	},
 	childContextTypes: {
 		muiTheme: React.PropTypes.object,
 		user: React.PropTypes.object,
@@ -19,16 +24,11 @@ const App = React.createClass({
 
 		return {
 			muiTheme: ThemeManager.getCurrentTheme(),
-			user: {
-				user: {
-					name: 2
-				},
-				update: function (user) {
-					_this.context.user.user = user;
-				}
-			},
+			user: this.state.user,
 			setUser: function (user) {
-				this.context.user = user;
+				_this.setState({
+					user: user
+				});
 			}
 		};
 	},
