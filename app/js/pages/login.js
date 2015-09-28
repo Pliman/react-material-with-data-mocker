@@ -22,7 +22,7 @@ const Index = React.createClass({
 			<div className="page">
 				<div className="row">
 					<div className="col-md-12">
-						<label>用户名{this.context.user.name}</label>
+						<label>用户名</label>
 						<input type="text"/>
 						<button onClick={this.doLogin}>登陆</button>
 					</div>
