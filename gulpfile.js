@@ -60,6 +60,7 @@ gulp.task('copy', function () {
 	return gulp.src([
 		'app/*',
 		'app/api/**/*',
+		'app/fonts/*',
 		'!app/*.html',
 		'!app/js',
 		'!app/less',
@@ -74,6 +75,8 @@ gulp.task('copy', function () {
 			return paths.dist.fonts;
 		} else if (filePath.indexOf('.json') > -1) {
 			return paths.dist.api;
+		} else if (/\.woff2|\.woff|\.eot|\.svg|\.ttf/.test(filePath)) {
+			return paths.dist.fonts;
 		}
 		return paths.dist.base;
 	})).pipe($.size({title: 'copy'}));
