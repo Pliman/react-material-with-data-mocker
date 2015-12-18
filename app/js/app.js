@@ -1,6 +1,7 @@
 'use strict';
 
 const React = require('react');
+const ReactDOM = require('react-dom');
 const Router = require('react-router');
 const Route = Router.Route;
 const DefaultRoute = Router.DefaultRoute;
@@ -58,6 +59,6 @@ const routes = (
 document.addEventListener('DOMContentLoaded', function () {
 	Router.run(routes,
 		function (Handler) {
-			React.render(<Handler />, document.body);
+			ReactDOM.render(<Handler />, document.getElementById('myApp'));
 		});
 });
