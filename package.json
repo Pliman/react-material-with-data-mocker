@@ -17,14 +17,16 @@
   },
   "dependencies": {
     "isomorphic-fetch": "^2.1.1",
-    "react": "^0.13.3",
+    "react": "^0.14.3",
     "react-router": "^0.13.2",
+    "reflux": "~0.3.0",
+    "lodash": "~3.0.1",
     "react-tap-event-plugin": "^0.1.7"
   },
   "devDependencies": {
-    "material-design-lite": "^1.0.4",
+    "material-design-lite": "~1.0.4",
     "bootstrap": "^3.3.5",
-    "material-ui": "^0.11.1",
+    "material-ui": "~0.11.1",
     "babelify": "^6.1.2",
     "browser-sync": "^2.6.4",
     "browserify": "^10.2.1",
