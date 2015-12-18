@@ -1,7 +1,7 @@
 {
-  "name": "data mocker",
+  "name": "data-mocker",
   "version": "0.0.1",
-  "description": "data mocker",
+  "description": "data-mocker",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
