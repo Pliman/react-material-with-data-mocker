@@ -5,7 +5,12 @@
   },
   "ecmaFeatures": {
     "blockBindings": true,
-    "jsx": true
+    "jsx": true,
+    "modules": true, // import
+    "arrowFunctions": true, // () =>
+    "defaultParams": true, // (a=0, )
+    "destructuring": true, // const {a} =
+    "classes": true // extend
   },
   "plugins": [
     "react"

@@ -1,5 +1,3 @@
-'use strict';
-
 var React = require('react');
 const Router = require('react-router');
 const RouteHandler = Router.RouteHandler;

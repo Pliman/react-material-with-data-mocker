@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 const year = new Date().getFullYear();
 
