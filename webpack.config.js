@@ -1,26 +1,44 @@
+'use strict';
+
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	devtool: 'eval',
+	devtool: 'eval-source-map',
 	entry: [
-		'webpack-dev-server/client?http://localhost:3000',
-		'webpack/hot/only-dev-server',
-		'./src/index'
+		'webpack-hot-middleware/client?reload=true',
+		path.join(__dirname, 'app/main.js')
 	],
 	output: {
-		path: path.join(__dirname, 'dist'),
-		filename: 'bundle.js',
-		publicPath: '/static/'
+		path: path.join(__dirname, '/dist/'),
+		filename: '[name].js',
+		publicPath: '/'
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new HtmlWebpackPlugin({
+			template: 'app/index.tpl.html',
+			inject: 'body',
+			filename: 'index.html'
+		}),
+		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin(),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('development')
+		})
 	],
 	module: {
 		loaders: [{
-			test: /\.js$/,
-			loaders: ['react-hot', 'babel'],
-			include: path.join(__dirname, 'src')
+			test: /\.js?$/,
+			exclude: /node_modules/,
+			loader: 'babel'
+		}, {
+			test: /\.json?$/,
+			loader: 'json'
+		}, {
+			test: /\.css$/,
+			loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
 		}]
 	}
 };
