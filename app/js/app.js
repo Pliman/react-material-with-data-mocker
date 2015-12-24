@@ -9,6 +9,7 @@ const RouteHandler = Router.RouteHandler;
 
 import aStyle from './a.css';
 import appStyle from '../less/app.less';
+import iLogo from '../i/logo.png';
 
 let ThemeManager = new (require('material-ui/lib/styles/theme-manager'))();
 
