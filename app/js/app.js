@@ -7,6 +7,9 @@ const Route = Router.Route;
 const DefaultRoute = Router.DefaultRoute;
 const RouteHandler = Router.RouteHandler;
 
+import aStyle from './a.css';
+import appStyle from '../less/app.less';
+
 let ThemeManager = new (require('material-ui/lib/styles/theme-manager'))();
 
 const App = React.createClass({

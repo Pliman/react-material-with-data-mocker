@@ -55,6 +55,7 @@
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0",
+    "less-loader": "^2.2.2",
     "bootstrap": "^3.3.5",
     "material-ui": "^0.11.1"
   }

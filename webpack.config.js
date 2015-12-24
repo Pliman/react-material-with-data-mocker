@@ -39,6 +39,12 @@ module.exports = {
 		}, {
 			test: /\.css$/,
 			loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
+		}, {
+			test: /\.less$/,
+			loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+		}, {
+			test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+			loader: "file-loader"
 		}]
 	}
 };

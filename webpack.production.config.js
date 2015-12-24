@@ -47,6 +47,12 @@ module.exports = {
 		}, {
 			test: /\.css$/,
 			loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss')
+		}, {
+			test: /\.less$/,
+			loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+		}, {
+			test: /\.(woff(2)?|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+			loader: "file-loader"
 		}]
 	},
 	postcss: [
