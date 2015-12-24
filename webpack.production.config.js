@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 //var StatsPlugin = require('stats-webpack-plugin');
+var clean = require('clean-webpack-plugin');
 
 module.exports = {
 	entry: [
@@ -15,6 +16,7 @@ module.exports = {
 		filename: '[name]-[hash].min.js'
 	},
 	plugins: [
+		new clean(['dist', 'build']),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new HtmlWebpackPlugin({
 			template: 'app/index.html',
