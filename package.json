@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "react-material-with-data-mocker-webpack",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Pliman/react-material-with-data-mocker.git"
@@ -14,6 +11,13 @@
   "license": "MIT",
   "engines": {
     "node": ">= 0.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node server",
+    "build": "rimraf dist && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "eslint": "eslint .",
+    "jscs": "jscs ."
   },
   "dependencies": {
     "isomorphic-fetch": "^2.1.1",
@@ -53,8 +57,5 @@
     "webpack-hot-middleware": "^2.2.0",
     "bootstrap": "^3.3.5",
     "material-ui": "^0.11.1"
-  },
-  "browserify-shim": {
-    "react": "global:React"
   }
 }
