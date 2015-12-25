@@ -16,7 +16,7 @@ module.exports = {
 		filename: '[name]-[hash].min.js'
 	},
 	plugins: [
-		new clean(['dist', 'build']),
+		new clean(['dist']),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new HtmlWebpackPlugin({
 			template: 'app/index.html',
