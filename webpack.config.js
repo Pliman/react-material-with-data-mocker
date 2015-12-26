@@ -5,7 +5,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	devtool: 'eval-source-map',
+	devtool: 'source-map',
 	entry: [
 		'webpack-hot-middleware/client?reload=true',
 		path.join(__dirname, 'app/js/app.js')
@@ -41,9 +41,9 @@ module.exports = {
 			loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
 		}, {
 			test: /\.less$/,
-			loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+			loaders: ["style", "css", "less"]
 		}, {
-			test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+			test: /\.(woff(2)?|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
 			loader: "file-loader"
 		}, {
 			test: /\.(png|jpg|jpeg|gif)$/,
