@@ -31,3 +31,6 @@ build/Release
 # temp files
 .tmp
 mock
+
+# vs code files
+.vscode
