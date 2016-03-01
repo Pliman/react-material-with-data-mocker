@@ -12,7 +12,7 @@ app.use(koaStatic('../../dist'));
 app.use(koaStatic('mocks'));
 app.use(bodyParser());
 
-app.use(route.get('/hello', function* () {
+app.use(route.all('/hello', function* () {
 	this.body = 'hello';
 }));
 
